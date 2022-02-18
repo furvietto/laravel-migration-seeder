@@ -14,7 +14,7 @@ class UpdateTrainsTable extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->date("name",100)->after('id');
+            $table->string("name",100)->after('id');
         });
     }
 
