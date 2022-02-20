@@ -17,4 +17,6 @@ class Train extends Model
         'in_orario',
         'cancellato',
     ];
+
+    public $timestamps =false;
 }

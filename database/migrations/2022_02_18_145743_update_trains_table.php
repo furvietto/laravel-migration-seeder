@@ -14,7 +14,8 @@ class UpdateTrainsTable extends Migration
     public function up()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->string("name",100)->after('id');
+            $table->date("data_di_partenza")->after("stazione_di_partenza");
+            $table->date("data_di_arrivo")->after("stazione_di_arrivo");
         });
     }
 
@@ -26,7 +27,8 @@ class UpdateTrainsTable extends Migration
     public function down()
     {
         Schema::table('trains', function (Blueprint $table) {
-            $table->dropcolumn("name");
+            $table->dropColumn("data_di_partenza");
+            $table->dropColumn("data_di_arrivo");
         });
     }
 }
