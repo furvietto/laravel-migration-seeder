@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Train;
+use Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -41,8 +42,16 @@ class PageController extends Controller
     }
     public function trains()
     {
-        $train= Train::where("data_di_partenza","=","2022-02-18")->get();
+        
+        // $train= Train::where("data_di_partenza","=",Carbon::today())->get();
+        // $data = ["train" => $train];
+        $train= Train::paginate(15);
         $data = ["train" => $train];
         return view("train",$data);
+    }
+
+    public function show(Train $train)
+    {
+        return view("show", compact("train"));
     }
 }
