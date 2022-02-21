@@ -10,7 +10,6 @@
                 @foreach ($train as $item)
                     <div class="col-4">
                         <div class="card mb-3">
-                            {{-- <h2>Azienda: {{$item->azienda}}</h2> --}}
                             <div class="card-body">
                                 <h5 class="card-title">Azienda: {{ $item->azienda }}</h5>
                                 <ul class="list-group list-group-flush">
